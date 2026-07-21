@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Roblox Bookmarker Tool — Privacy Policy</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:wght@500;600;700;800&display=swap" rel="stylesheet">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --gold-100: #fef9e7;
+            --gold-200: #fde68a;
+            --gold-300: #fcd34d;
+            --gold-400: #fbbf24;
+            --gold-500: #f59e0b;
+            --gold-600: #d97706;
+            --gold-700: #b45309;
+            --gold-800: #92400e;
+            --gold-900: #78350f;
+            --surface: #0f0f0b;
+            --surface-card: #1a1a12;
+            --surface-elevated: #242418;
+            --text-primary: #fef9e7;
+            --text-secondary: #d6cfa8;
+            --text-muted: #a89f7a;
+            --border-subtle: rgba(251, 191, 36, 0.12);
+            --border-glow: rgba(251, 191, 36, 0.3);
+            --glow-soft: rgba(245, 158, 11, 0.15);
+            --glow-medium: rgba(251, 191, 36, 0.25);
+            --glow-strong: rgba(245, 158, 11, 0.45);
+        }
+
+        body {
+            min-height: 100vh;
+            background: var(--surface);
+            color: var(--text-primary);
+            font-family: 'Inter', 'Segoe UI', Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            padding: 40px 20px 60px;
+            position: relative;
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        /* ── ambient background glow ── */
+        body::before {
+            content: '';
+            position: fixed;
+            inset: 0;
+            pointer-events: none;
+            z-index: 0;
+            background:
+                radial-gradient(ellipse 1200px 700px at 50% -15%, rgba(245, 158, 11, 0.09), transparent 60%),
+                radial-gradient(ellipse 900px 600px at 85% 80%, rgba(251, 191, 36, 0.06), transparent 55%),
+                radial-gradient(ellipse 700px 500px at 15% 40%, rgba(217, 119, 6, 0.05), transparent 50%);
+        }
+
+        /* ── subtle grid texture overlay ── */
+        body::after {
+            content: '';
+            position: fixed;
+            inset: 0;
+            pointer-events: none;
+            z-index: 0;
+            opacity: 0.025;
+            background-image:
+                linear-gradient(rgba(251, 191, 36, 0.5) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(251, 191, 36, 0.5) 1px, transparent 1px);
+            background-size: 50px 50px;
+        }
+
+        .container {
+            position: relative;
+            z-index: 1;
+            max-width: 880px;
+            width: 100%;
+            background: rgba(26, 26, 18, 0.8);
+            backdrop-filter: blur(24px);
+            -webkit-backdrop-filter: blur(24px);
+            border: 1px solid var(--border-subtle);
+            border-radius: 28px;
+            padding: 48px 44px;
+            box-shadow:
+                0 0 0 1px rgba(251, 191, 36, 0.08) inset,
+                0 0 80px var(--glow-soft),
+                0 24px 64px rgba(0, 0, 0, 0.5);
+            animation: fadeSlideUp 0.9s cubic-bezier(0.22, 0.61, 0.36, 1);
+            transition: box-shadow 0.5s ease;
+        }
+
+        .container:hover {
+            box-shadow:
+                0 0 0 1px rgba(251, 191, 36, 0.12) inset,
+                0 0 100px var(--glow-medium),
+                0 28px 72px rgba(0, 0, 0, 0.55);
+        }
+
+        /* ── logo section ── */
+        .logo {
+            text-align: center;
+            margin-bottom: 20px;
+            position: relative;
+        }
+
+        .logo-icon {
+            display: inline-block;
+            width: 56px;
+            height: 56px;
+            margin-bottom: 16px;
+            border-radius: 16px;
+            background: linear-gradient(135deg, #fbbf24 0%, #f59e0b 40%, #d97706 100%);
+            box-shadow: 0 0 40px rgba(245, 158, 11, 0.45), 0 8px 24px rgba(0, 0, 0, 0.4);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 26px;
+            animation: pulseGlow 3s ease-in-out infinite;
+        }
+
+        @keyframes pulseGlow {
+            0%,
+            100% {
+                box-shadow: 0 0 40px rgba(245, 158, 11, 0.45), 0 8px 24px rgba(0, 0, 0, 0.4);
+            }
+            50% {
+                box-shadow: 0 0 65px rgba(251, 191, 36, 0.7), 0 10px 30px rgba(0, 0, 0, 0.5);
+            }
+        }
+
+        .logo h1 {
+            font-family: 'Playfair Display', 'Georgia', serif;
+            font-size: 38px;
+            font-weight: 700;
+            letter-spacing: -0.4px;
+            background: linear-gradient(135deg, #fde68a 0%, #fbbf24 30%, #f59e0b 60%, #eab308 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            line-height: 1.2;
+        }
+
+        .logo .subtitle {
+            color: var(--text-muted);
+            margin-top: 6px;
+            font-size: 14px;
+            font-weight: 500;
+            letter-spacing: 0.6px;
+            text-transform: uppercase;
+            opacity: 0.8;
+        }
+
+        /* ── badge ── */
+        .badge-row {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            flex-wrap: wrap;
+            margin-bottom: 30px;
+        }
+
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 8px 18px;
+            border-radius: 999px;
+            background: rgba(245, 158, 11, 0.1);
+            border: 1px solid rgba(251, 191, 36, 0.25);
+            color: #fcd34d;
+            font-size: 13px;
+            font-weight: 600;
+            letter-spacing: 0.3px;
+            backdrop-filter: blur(6px);
+            transition: all 0.35s ease;
+            cursor: default;
+        }
+
+        .badge:hover {
+            background: rgba(245, 158, 11, 0.18);
+            border-color: rgba(251, 191, 36, 0.5);
+            box-shadow: 0 0 24px rgba(245, 158, 11, 0.3);
+            transform: translateY(-1px);
+        }
+
+        .badge-dot {
+            width: 7px;
+            height: 7px;
+            border-radius: 50%;
+            background: #fbbf24;
+            box-shadow: 0 0 10px #fbbf24;
+            animation: dotPulse 2s ease-in-out infinite;
+        }
+
+        @keyframes dotPulse {
+            0%,
+            100% {
+                box-shadow: 0 0 8px #fbbf24;
+            }
+            50% {
+                box-shadow: 0 0 20px #fcd34d, 0 0 32px rgba(251, 191, 36, 0.5);
+            }
+        }
+
+        /* ── intro paragraph ── */
+        .intro-text {
+            text-align: center;
+            color: var(--text-secondary);
+            font-size: 15px;
+            line-height: 1.75;
+            max-width: 650px;
+            margin: 0 auto 10px;
+            font-weight: 400;
+        }
+
+        /* ── headings ── */
+        h2 {
+            margin-top: 40px;
+            margin-bottom: 14px;
+            color: #fcd34d;
+            font-size: 20px;
+            font-weight: 700;
+            letter-spacing: -0.2px;
+            position: relative;
+            display: inline-block;
+        }
+
+        h2::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: -4px;
+            width: 100%;
+            height: 2px;
+            border-radius: 1px;
+            background: linear-gradient(90deg, rgba(251, 191, 36, 0.7), rgba(251, 191, 36, 0.05));
+        }
+
+        /* ── cards ── */
+        .card {
+            margin-top: 14px;
+            padding: 22px 24px;
+            border-radius: 18px;
+            background: var(--surface-card);
+            border: 1px solid var(--border-subtle);
+            transition: all 0.4s cubic-bezier(0.22, 0.61, 0.36, 1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border-radius: 18px;
+            background: radial-gradient(ellipse 400px 200px at 80% 0%, rgba(251, 191, 36, 0.04), transparent 70%);
+            pointer-events: none;
+            transition: opacity 0.4s ease;
+            opacity: 0;
+        }
+
+        .card:hover {
+            transform: translateY(-4px);
+            border-color: var(--border-glow);
+            box-shadow: 0 16px 40px rgba(0, 0, 0, 0.45), 0 0 50px var(--glow-soft);
+            background: var(--surface-elevated);
+        }
+
+        .card:hover::before {
+            opacity: 1;
+        }
+
+        .card p {
+            color: var(--text-secondary);
+            font-size: 14.5px;
+            line-height: 1.75;
+            position: relative;
+            z-index: 1;
+        }
+
+        .card ul {
+            margin-left: 22px;
+            margin-top: 10px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .card ul li {
+            color: var(--text-secondary);
+            font-size: 14px;
+            line-height: 1.8;
+            padding-left: 6px;
+            position: relative;
+            list-style: none;
+        }
+
+        .card ul li::before {
+            content: '';
+            position: absolute;
+            left: -18px;
+            top: 9px;
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background: #fbbf24;
+            box-shadow: 0 0 8px rgba(251, 191, 36, 0.6);
+        }
+
+        /* ── footer ── */
+        .footer {
+            text-align: center;
+            margin-top: 40px;
+            color: var(--text-muted);
+            font-size: 13px;
+            font-weight: 400;
+            letter-spacing: 0.2px;
+            opacity: 0.7;
+        }
+
+        .footer-line {
+            display: block;
+            width: 60px;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(251, 191, 36, 0.4), transparent);
+            margin: 0 auto 16px;
+        }
+
+        /* ── floating particles ── */
+        .particle {
+            position: fixed;
+            pointer-events: none;
+            z-index: 0;
+            border-radius: 50%;
+            animation: floatUp linear infinite;
+            opacity: 0;
+        }
+
+        @keyframes floatUp {
+            0% {
+                transform: translateY(105vh) scale(0);
+                opacity: 0;
+            }
+            5% {
+                opacity: 0.55;
+            }
+            20% {
+                opacity: 0.5;
+            }
+            80% {
+                opacity: 0.25;
+            }
+            95% {
+                opacity: 0;
+            }
+            100% {
+                transform: translateY(-10vh) scale(1.4);
+                opacity: 0;
+            }
+        }
+
+        @keyframes fadeSlideUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* ── responsive ── */
+        @media (max-width: 640px) {
+            .container {
+                padding: 28px 20px;
+                border-radius: 20px;
+            }
+            .logo h1 {
+                font-size: 28px;
+            }
+            h2 {
+                font-size: 17px;
+                margin-top: 28px;
+            }
+            .card {
+                padding: 16px 18px;
+                border-radius: 14px;
+            }
+            .card p,
+            .card ul li {
+                font-size: 13px;
+            }
+            .badge {
+                font-size: 11px;
+                padding: 6px 14px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <!-- logo -->
+        <div class="logo">
+            <div class="logo-icon">📌</div>
+            <h1>Roblox Bookmarker Tool</h1>
+            <p class="subtitle">Privacy Policy</p>
+        </div>
+
+        <!-- badge row -->
+        <div class="badge-row">
+            <span class="badge">
+                <span class="badge-dot"></span> Chrome Extension
+            </span>
+            <span class="badge">
+                🔒 Privacy First
+            </span>
+        </div>
+
+        <!-- intro -->
+        <p class="intro-text">
+            Roblox Bookmarker Tool is a browser-based program that helps its users bookmark
+            and conveniently access their favorite Roblox games. The application has been developed
+            while taking into account user privacy issues and uses only necessary permissions.
+        </p>
+
+        <!-- sections -->
+        <h2>Information We Collect</h2>
+        <div class="card">
+            <p>Personal information is not collected, sold, nor shared by Roblox Bookmarker Tool. It collects only the information necessary to provide the features of bookmarking.</p>
+            <ul>
+                <li>Saved Roblox game bookmarks</li>
+                <li>User extension preferences and settings</li>
+                <li>Extension configuration data</li>
+            </ul>
+        </div>
+
+        <h2>Storage Permission</h2>
+        <div class="card">
+            <p>The extension uses Chrome's storage permission to save user preferences and bookmarked Roblox games locally inside the user's browser.</p>
+            <ul>
+                <li>Saved game IDs and bookmark information</li>
+                <li>User interface preferences</li>
+                <li>Extension settings</li>
+            </ul>
+            <p style="margin-top:10px;">This information remains stored locally in the user's browser and is not sold or shared with third parties.</p>
+        </div>
+
+        <h2>Cookies Permission</h2>
+        <div class="card">
+            <p>The extension may use cookie access only when interacting with Roblox services required for extension functionality.</p>
+            <ul>
+                <li>Maintaining Roblox website compatibility</li>
+                <li>Supporting authenticated Roblox requests when required</li>
+                <li>Allowing Roblox pages to properly communicate with the extension</li>
+            </ul>
+            <p style="margin-top:10px;">The extension does not collect, store, or transmit Roblox cookies. Cookies are only accessed when necessary for features requested by the user.</p>
+        </div>
+
+        <h2>Third-Party Services</h2>
+        <div class="card">
+            <p>The Roblox Bookmarker may communicate with services owned by Roblox in order to access information about publicly available games. This extension does not dictate the privacy practices of Roblox, and users should check the privacy policy of Roblox themselves.</p>
+        </div>
+
+        <h2>Data Security</h2>
+        <div class="card">
+            <p>Reasonable efforts have been made to guarantee the safety of the extension data. Bookmark data of the users is kept locally and is not uploaded to any external servers unless specifically needed for some future feature.</p>
+        </div>
+
+        <h2>Changes To This Policy</h2>
+        <div class="card">
+            <p>This privacy policy may be updated as new features are added. Any changes will be reflected on this page.</p>
+        </div>
+
+        <h2>Contact</h2>
+        <div class="card">
+            <p>For questions regarding this privacy policy, please contact the extension developer through the Chrome Web Store support page.</p>
+        </div>
+
+        <!-- footer -->
+        <div class="footer">
+            <span class="footer-line"></span>
+            © <span id="year"></span> Roblox Bookmarker Tool. All rights reserved.
+        </div>
+    </div>
+
+    <script>
+        // dynamic year
+        document.getElementById('year').textContent = new Date().getFullYear();
+
+        // ── elegant floating gold particles ──
+        const particleCount = 40;
+        const container = document.body;
+
+        for (let i = 0; i < particleCount; i++) {
+            const particle = document.createElement('div');
+            particle.classList.add('particle');
+
+            const size = Math.random() * 4 + 2;
+            particle.style.width = size + 'px';
+            particle.style.height = size + 'px';
+
+            particle.style.left = Math.random() * 100 + '%';
+            particle.style.bottom = '0px';
+
+            // warm gold hues
+            const hue = 38 + Math.random() * 15; // 38–53 (gold range)
+            const saturation = 70 + Math.random() * 30;
+            const lightness = 55 + Math.random() * 35;
+            particle.style.background = `hsl(${hue}, ${saturation}%, ${lightness}%)`;
+            particle.style.boxShadow = `0 0 ${size * 3}px hsl(${hue}, ${saturation}%, ${lightness}%)`;
+
+            const duration = 10 + Math.random() * 18;
+            particle.style.animationDuration = duration + 's';
+            particle.style.animationDelay = Math.random() * 14 + 's';
+
+            container.appendChild(particle);
+        }
+    </script>
+
+</body>
+</html>
