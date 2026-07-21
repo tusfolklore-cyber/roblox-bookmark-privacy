@@ -5,9 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Roblox Bookmarker Tool — Privacy Policy</title>
 
+    <!-- DM Sans font -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:wght@500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
     <style>
         * {
@@ -43,7 +44,7 @@
             min-height: 100vh;
             background: var(--surface);
             color: var(--text-primary);
-            font-family: 'Inter', 'Segoe UI', Arial, sans-serif;
+            font-family: 'DM Sans', 'Segoe UI', Arial, sans-serif;
             display: flex;
             justify-content: center;
             padding: 40px 20px 60px;
@@ -53,7 +54,7 @@
             -moz-osx-font-smoothing: grayscale;
         }
 
-        /* ── ambient background glow ── */
+        /* ambient background glow */
         body::before {
             content: '';
             position: fixed;
@@ -66,7 +67,7 @@
                 radial-gradient(ellipse 700px 500px at 15% 40%, rgba(217, 119, 6, 0.05), transparent 50%);
         }
 
-        /* ── subtle grid texture overlay ── */
+        /* subtle grid texture */
         body::after {
             content: '';
             position: fixed;
@@ -106,7 +107,7 @@
                 0 28px 72px rgba(0, 0, 0, 0.55);
         }
 
-        /* ── logo section ── */
+        /* logo section */
         .logo {
             text-align: center;
             margin-bottom: 20px;
@@ -114,18 +115,26 @@
         }
 
         .logo-icon {
-            display: inline-block;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
             width: 56px;
             height: 56px;
             margin-bottom: 16px;
             border-radius: 16px;
             background: linear-gradient(135deg, #fbbf24 0%, #f59e0b 40%, #d97706 100%);
             box-shadow: 0 0 40px rgba(245, 158, 11, 0.45), 0 8px 24px rgba(0, 0, 0, 0.4);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 26px;
             animation: pulseGlow 3s ease-in-out infinite;
+        }
+
+        .logo-icon svg {
+            width: 28px;
+            height: 28px;
+            fill: none;
+            stroke: #fff;
+            stroke-width: 2;
+            stroke-linecap: round;
+            stroke-linejoin: round;
         }
 
         @keyframes pulseGlow {
@@ -139,9 +148,9 @@
         }
 
         .logo h1 {
-            font-family: 'Playfair Display', 'Georgia', serif;
-            font-size: 38px;
+            font-family: 'DM Sans', sans-serif;
             font-weight: 700;
+            font-size: 36px;
             letter-spacing: -0.4px;
             background: linear-gradient(135deg, #fde68a 0%, #fbbf24 30%, #f59e0b 60%, #eab308 100%);
             -webkit-background-clip: text;
@@ -160,20 +169,18 @@
             opacity: 0.8;
         }
 
-        /* ── badge ── */
+        /* badge row */
         .badge-row {
             display: flex;
             justify-content: center;
-            gap: 10px;
-            flex-wrap: wrap;
             margin-bottom: 30px;
         }
 
         .badge {
             display: inline-flex;
             align-items: center;
-            gap: 6px;
-            padding: 8px 18px;
+            gap: 8px;
+            padding: 8px 20px;
             border-radius: 999px;
             background: rgba(245, 158, 11, 0.1);
             border: 1px solid rgba(251, 191, 36, 0.25);
@@ -194,6 +201,7 @@
         }
 
         .badge-dot {
+            display: inline-block;
             width: 7px;
             height: 7px;
             border-radius: 50%;
@@ -212,7 +220,7 @@
             }
         }
 
-        /* ── intro paragraph ── */
+        /* intro paragraph */
         .intro-text {
             text-align: center;
             color: var(--text-secondary);
@@ -223,7 +231,7 @@
             font-weight: 400;
         }
 
-        /* ── headings ── */
+        /* headings */
         h2 {
             margin-top: 40px;
             margin-bottom: 14px;
@@ -233,6 +241,7 @@
             letter-spacing: -0.2px;
             position: relative;
             display: inline-block;
+            font-family: 'DM Sans', sans-serif;
         }
 
         h2::after {
@@ -246,7 +255,7 @@
             background: linear-gradient(90deg, rgba(251, 191, 36, 0.7), rgba(251, 191, 36, 0.05));
         }
 
-        /* ── cards ── */
+        /* cards */
         .card {
             margin-top: 14px;
             padding: 22px 24px;
@@ -289,6 +298,7 @@
             line-height: 1.75;
             position: relative;
             z-index: 1;
+            font-family: 'DM Sans', sans-serif;
         }
 
         .card ul {
@@ -305,6 +315,7 @@
             padding-left: 6px;
             position: relative;
             list-style: none;
+            font-family: 'DM Sans', sans-serif;
         }
 
         .card ul li::before {
@@ -319,7 +330,7 @@
             box-shadow: 0 0 8px rgba(251, 191, 36, 0.6);
         }
 
-        /* ── footer ── */
+        /* footer */
         .footer {
             text-align: center;
             margin-top: 40px;
@@ -328,6 +339,7 @@
             font-weight: 400;
             letter-spacing: 0.2px;
             opacity: 0.7;
+            font-family: 'DM Sans', sans-serif;
         }
 
         .footer-line {
@@ -338,7 +350,7 @@
             margin: 0 auto 16px;
         }
 
-        /* ── floating particles ── */
+        /* floating particles */
         .particle {
             position: fixed;
             pointer-events: none;
@@ -382,14 +394,14 @@
             }
         }
 
-        /* ── responsive ── */
+        /* responsive */
         @media (max-width: 640px) {
             .container {
                 padding: 28px 20px;
                 border-radius: 20px;
             }
             .logo h1 {
-                font-size: 28px;
+                font-size: 26px;
             }
             h2 {
                 font-size: 17px;
@@ -415,31 +427,33 @@
 
     <div class="container">
 
-        <!-- logo -->
+        <!-- logo with SVG icon instead of emoji -->
         <div class="logo">
-            <div class="logo-icon">📌</div>
+            <div class="logo-icon">
+                <!-- Bookmark SVG icon -->
+                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z" />
+                </svg>
+            </div>
             <h1>Roblox Bookmarker Tool</h1>
             <p class="subtitle">Privacy Policy</p>
         </div>
 
-        <!-- badge row -->
+        <!-- badge row – exactly original text -->
         <div class="badge-row">
             <span class="badge">
-                <span class="badge-dot"></span> Chrome Extension
-            </span>
-            <span class="badge">
-                🔒 Privacy First
+                <span class="badge-dot"></span> Chrome Extension Privacy Notice
             </span>
         </div>
 
-        <!-- intro -->
+        <!-- intro text – unchanged wording -->
         <p class="intro-text">
             Roblox Bookmarker Tool is a browser-based program that helps its users bookmark
-            and conveniently access their favorite Roblox games. The application has been developed
-            while taking into account user privacy issues and uses only necessary permissions.
+            and conveniently access their favorite Roblox games.
+            The application has been developed while taking into account user privacy issues
+            and uses only necessary permissions.
         </p>
 
-        <!-- sections -->
         <h2>Information We Collect</h2>
         <div class="card">
             <p>Personal information is not collected, sold, nor shared by Roblox Bookmarker Tool. It collects only the information necessary to provide the features of bookmarking.</p>
@@ -492,7 +506,6 @@
             <p>For questions regarding this privacy policy, please contact the extension developer through the Chrome Web Store support page.</p>
         </div>
 
-        <!-- footer -->
         <div class="footer">
             <span class="footer-line"></span>
             © <span id="year"></span> Roblox Bookmarker Tool. All rights reserved.
@@ -503,9 +516,9 @@
         // dynamic year
         document.getElementById('year').textContent = new Date().getFullYear();
 
-        // ── elegant floating gold particles ──
+        // floating gold particles – no emojis, pure CSS elements
         const particleCount = 40;
-        const container = document.body;
+        const body = document.body;
 
         for (let i = 0; i < particleCount; i++) {
             const particle = document.createElement('div');
@@ -518,8 +531,7 @@
             particle.style.left = Math.random() * 100 + '%';
             particle.style.bottom = '0px';
 
-            // warm gold hues
-            const hue = 38 + Math.random() * 15; // 38–53 (gold range)
+            const hue = 38 + Math.random() * 15;
             const saturation = 70 + Math.random() * 30;
             const lightness = 55 + Math.random() * 35;
             particle.style.background = `hsl(${hue}, ${saturation}%, ${lightness}%)`;
@@ -529,7 +541,7 @@
             particle.style.animationDuration = duration + 's';
             particle.style.animationDelay = Math.random() * 14 + 's';
 
-            container.appendChild(particle);
+            body.appendChild(particle);
         }
     </script>
 
